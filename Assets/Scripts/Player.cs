@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     {
         alive = true;
         animator = GetComponent<Animator>();
-        timerObject = GameManager.instance.GetComponent<Timer>();
+        timerObject = GameObject.FindGameObjectWithTag("timer").GetComponent<Timer>();
     }
 
     public void Die()
@@ -103,14 +103,14 @@ public class Player : MonoBehaviour
         }
         else if (col.transform.tag == "Finish")
         {
-            if (SceneManager.GetActiveScene().buildIndex + 1 > SceneManager.sceneCount)
+            // Play Finish Level Sound
+            AudioManager.instance.Play("FinishLevel");
+            if (SceneManager.GetActiveScene().buildIndex + 1 > SceneManager.sceneCountInBuildSettings-1)
             {
                 SceneManager.LoadScene(0);
             }
             else
             {
-                // Play Finish Level Sound
-                AudioManager.instance.Play("FinishLevel");
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }

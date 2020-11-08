@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 385865089809677226}
   m_Layer: 0
   m_Name: Timer
-  m_TagString: Untagged
+  m_TagString: timer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c0114a66d0ea6b4c8ab6a3b784348ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelTime: 50
+  levelTime: 120
   currentTime: 0
   stopTimer: 0
+  temperature: {fileID: 0}
