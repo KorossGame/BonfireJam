@@ -19,6 +19,8 @@ public class WallTrap : MonoBehaviour
             nextShootTime = Time.time + 1 / fireRate;
             Bullet bullet = Instantiate(bulletPrefab, transform.position + direction, gameObject.transform.rotation, gameObject.transform);
             bullet.rb.AddForce(direction * forwardForce);
+            // Play Toaster Sound
+            AudioManager.instance.Play("Toaster");
         }
     }
     

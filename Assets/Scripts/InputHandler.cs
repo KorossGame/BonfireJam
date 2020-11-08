@@ -25,6 +25,8 @@ public class InputHandler : MonoBehaviour
         if (Input.GetKeyDown("space") && currentJumps < maxJumps)
         {
             rb.AddForce(jumpDirection * jumpVelocity);
+            // Play Jump Sound
+            AudioManager.instance.Play("Step");
             currentJumps++;
         }
     }
